@@ -37,9 +37,6 @@ export default {
 
   methods: {
     selectedTab(value) {
-      if(value && value.toLowerCase() === 'exit') {
-        return this.$router.push({ path: '/login' });
-      }
       return this.$emit('value-changed', value);
     }
   }
@@ -53,24 +50,25 @@ export default {
     bottom: 0;
     height: 60px;
     display: flex;
+    font-weight: 700;
+    border-bottom: 1px solid #e0e0e0;
   }
   .tab-button {
     width: 100%;
-    padding: 6px 0;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border: 1px solid #ccc;
+    padding: 0;
+    border: 0;
+    color: #FFF;
     cursor: pointer;
-    background: #f0f0f0;
+    background: #118060;
   }
   .tab-button:hover {
-    background: #e0e0e0;
+    background: #118060;
   }
   .tab-button.active {
-    background: #e0e0e0;
+    background: #118060;
   }
   .tab {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
   }
 </style>

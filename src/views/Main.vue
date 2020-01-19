@@ -27,11 +27,11 @@ export default {
   .main {
     display: flex;
     flex-direction: column;
+    padding: 0 15px;
   }
   .input-container {
     display: flex;
     flex-direction: column;
-    padding: 15px;
   }
   .input-container > input {
     margin: 10px 0;
