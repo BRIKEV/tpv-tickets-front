@@ -56,7 +56,7 @@ export default {
   .login {
     height: 100vh;
     padding: 0 25px;
-    background-image: url('../assets/taxi-bg.png');
+    background-image: url('../assets/taxi-bg-min.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
