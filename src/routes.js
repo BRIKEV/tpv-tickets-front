@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -16,29 +17,25 @@ const router = new Router({
       component: Login,
       meta: {
         public: true,
-        onlyWhenLoggedOut: true
-      }
+        onlyWhenLoggedOut: true,
+      },
     },
     {
       path: '/',
       name: 'admin',
       component: Admin,
-      meta: {
-        public: true,
-        onlyWhenLoggedOut: true
-      }
     },
   ],
 });
 
 router.beforeEach((to, from, next) => {
-  const isPublic = to.matched.some(record => record.meta.public)
-  const onlyWhenLoggedOut = to.matched.some(record => record.meta.onlyWhenLoggedOut)
+  const isPublic = to.matched.some(record => record.meta.public);
+  const onlyWhenLoggedOut = to.matched.some(record => record.meta.onlyWhenLoggedOut);
   const loggedIn = !!undefined;
 
   if (!isPublic && !loggedIn) {
     return next({
-      path:'/login',
+      path: '/login',
       // query: {redirect: to.fullPath}  // Store the full path to redirect the user to after login
     });
   }
@@ -47,7 +44,7 @@ router.beforeEach((to, from, next) => {
     return next('/');
   }
 
-  next();
-})
+  return next();
+});
 
 export default router;

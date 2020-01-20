@@ -11,9 +11,9 @@ export default {
 
   data() {
     return {
-      currentTab: String
-    }
-  }
+      currentTab: String,
+    };
+  },
 };
 </script>
 
