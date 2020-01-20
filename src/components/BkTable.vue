@@ -11,22 +11,142 @@
       <tr>
         <td>21-12-2019</td>
         <td>2.10 €</td>
-        <td><input type="checkbox" value=""></td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
       </tr>
       <tr>
         <td>21-12-2019</td>
         <td>2.10 €</td>
-        <td><input type="checkbox" value=""></td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
       </tr>
       <tr>
         <td>21-12-2019</td>
         <td>2.10 €</td>
-        <td><input type="checkbox" value=""></td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
       </tr>
       <tr>
         <td>21-12-2019</td>
         <td>2.10 €</td>
-        <td><input type="checkbox" value=""></td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
+      </tr>
+      <tr>
+        <td>21-12-2019</td>
+        <td>2.10 €</td>
+        <td><input class="checkbox" type="checkbox" value=""></td>
       </tr>
     </tbody>
   </table>
@@ -40,6 +160,12 @@ export default {
 
 <style scoped>
   table {
+    margin: 25px 0;
     text-align: center;
+    font-size: 1.2rem;
+  }
+  .checkbox {
+    height: 20px;
+    width: 20px;
   }
 </style>

@@ -1,39 +1,42 @@
 <template>
   <div class="admin">
-    <div class="input-container">
-      <input type="text" placeholder="Precio">
-      <input type="text" placeholder="Fecha">
-    </div>
-    <bk-button><slot>Comprobar</slot></bk-button>
-    <bk-table></bk-table>
+    <BkHeader :title="brandName"/>
+    <bk-dynamic-select :currentTab="currentTab" :tabs="tabs" @value-changed="changesHandler"></bk-dynamic-select>
   </div>
 </template>
 
 <script>
-import BkTable from '@/components/BkTable.vue';
-import BkButton from '@/components/BkButton.vue';
+import BkDynamicSelect from '@/components/BkDynamicSelect.vue';
+import BkHeader from '@/components/BkHeader.vue';
 
 export default {
   name: 'Admin',
 
-  components: {
-    BkTable,
-    BkButton
+  data() {
+    return {
+      currentTab: 'Main',
+      tabs: ['Main', 'PdfLoader', 'Exit'],
+      brandName: 'BRIKEV'
+    }
   },
+
+  components: {
+    BkHeader,
+    BkDynamicSelect
+  },
+
+  methods: {
+    changesHandler(selected) {
+      this.currentTab = selected;
+    }
+  }
+
+
 }
 </script>
 <style scoped>
   .admin {
     display: flex;
     flex-direction: column;
-  }
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-  }
-  .input-container > input {
-    margin: 10px 0;
-    height: 25px;
   }
 </style>
