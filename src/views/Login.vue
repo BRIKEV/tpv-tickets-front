@@ -3,29 +3,21 @@
     <form class="form" @submit.prevent="handleSubmit">
       <h1>TPV-APP</h1>
       <div class="input-container">
+        <span>Username</span>
         <input
-          :class="{ focus: isFocus }"
-          @focus="setFocus"
-          @blur="setBlur"
           v-model="username"
           name="username"
-          ref="username"
           type="text">
-        <span data-placeholder="Username"></span>
       </div>
       <div class="input-container">
+        <span>Password</span>
         <input
-          :class="{ focus: isFocus }"
           name="password"
-          ref="password"
-          @focus="setFocus"
-          @blur="setBlur"
           v-model="password"
           type="password">
-        <span data-placeholder="Password"></span>
       </div>
 
-      <bk-button @click="handleSubmit">Login</bk-button>
+      <bk-button class="btn" @click="handleSubmit">Login</bk-button>
     </form>
   </div>
 </template>
@@ -43,8 +35,7 @@ export default {
   data() {
     return {
       username: '',
-      password: '',
-      isFocus: false,
+      password: ''
     }
   },
 
@@ -56,13 +47,6 @@ export default {
           password: this.password
         });
       }
-    },
-    setFocus(evt) {
-      this.$emit('selected', { id: evt.target.name });
-      this.isFocus = true
-    },
-    setBlur(evt) {
-      this.$emit('input-blur', { id: evt.target.name });
     }
   }
 }
@@ -71,64 +55,61 @@ export default {
 <style scoped>
   .login {
     height: 100vh;
+    padding: 0 25px;
+    background-image: url('../assets/taxi-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
   .form {
-    width: 360px;
-    height: 580px;
-    background: #f1f1f1;
-    padding: 80px 40px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background: none;
     left: 50%;
     top: 50%;
-    color: black;
-    position: absolute;
-    transform: translate(-50%, -50%)
+    text-align: center;
+    position: relative;
+    transform: translate(-50%, -50%);
   }
   .form h1 {
+    color: #FFF;
     text-align: center;
-    margin-bottom: 60px;
+    margin: 0;
+    padding: 15px;
   }
   .input-container {
+    display: flex;
+    align-items: center;
     position: relative;
-    border-bottom: 2px solid #ddd;
     margin: 30px 0;
   }
   .input-container input {
+    color: #FFF;
     font-size: 0.938rem;
     border: none;
     width: 100%;
     outline: none;
     background: none;
-    padding: 0 5px;
     height: 50px;
+    border-bottom: 2px solid #FFF;
+  }
+  .input-container input:focus {
+    border-bottom: 3px solid #118060;
   }
 
-  .input-container span::before {
-    content: attr(data-placeholder);
+  .input-container span {
+    color: #FFF;
+    bottom: 45px;
     position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    z-index: -1;
+    font-size: 1.34rem;
+    font-weight: 700;
   }
-
-  .input-container span::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    transition: .5s;
-    background: #118060;
-  }
-
-  .input-container span:focus {
-    top: -5px;
-  }
-  .focus + span::before {
-    top: -5px;
-  }
-  .focus + span::after {
+  .btn {
     width: 100%;
+  }
+  .btn:hover, .btn:active {
+    color: #FFF;
+    border: 2px solid #FFF;
   }
 </style>
