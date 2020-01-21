@@ -26,6 +26,8 @@
 
 <script>
 import BkButton from '@/components/BkButton.vue';
+import { uploadPDF } from '../api';
+
 export default {
   name: 'PdfLoader',
   components: {
@@ -46,8 +48,7 @@ export default {
       if (evt.target.checkValidity()) {
         const data = new FormData();
         data.append('file', this.pdfFile);
-        // call API
-        return;
+        return uploadPDF(data);
       }
     },
   },
@@ -60,6 +61,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
   }
   form {
     width: 100%;
