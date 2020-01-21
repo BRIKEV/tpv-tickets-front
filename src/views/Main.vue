@@ -8,7 +8,7 @@
     </div>
     <div class="table-container">
       <h2>Tickets registrados</h2>
-      <bk-table></bk-table>
+      <bk-table :data="tickets"></bk-table>
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@
 <script>
 import BkTable from '@/components/BkTable.vue';
 import BkButton from '@/components/BkButton.vue';
+import { getTickets } from '@/api';
 
 export default {
   name: 'Main',
@@ -23,6 +24,19 @@ export default {
   components: {
     BkTable,
     BkButton,
+  },
+
+  data() {
+    return {
+      tickets: [],
+    };
+  },
+
+  created() {
+    getTickets()
+      .then(({ data }) => {
+        this.tickets = data;
+      });
   },
 };
 </script>

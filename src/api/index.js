@@ -18,3 +18,5 @@ export const uploadPDF = formData => (
       },
     })
 );
+
+export const getTickets = () => axios.get(`${TPV_APP_API_URL}/tickets`);
