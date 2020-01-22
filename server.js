@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(helmet());
+app.use(compression());
+
 app.use(express.static('dist'));
 app.get('/*', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
