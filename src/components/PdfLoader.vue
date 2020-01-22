@@ -64,20 +64,20 @@ export default {
     margin-top: 50px;
   }
   form {
-    width: 100%;
-    text-align: center;
+    width: 80%;
+    margin: 0 auto;
   }
   .pdf-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
     margin: 0 auto;
     height: 200px;
     border: 2px dotted #000;
     border-radius: 10px;
     position: relative;
+    margin-top: 30px;
   }
   .pdf-container label {
     width: 100%;
@@ -93,6 +93,7 @@ export default {
     visibility: hidden;
   }
   .btn {
+    width: 100%;
     margin: 20px 0;
   }
 </style>
