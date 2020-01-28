@@ -78,19 +78,21 @@ export default {
     border-radius: 10px;
     position: relative;
     margin-top: 30px;
-  }
-  .pdf-container label {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .pdf-container input {
-    position: absolute;
-    visibility: hidden;
+
+    label {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
   }
   .btn {
     width: 100%;

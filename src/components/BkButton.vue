@@ -31,14 +31,13 @@ export default {
     text-decoration: none;
     font-weight: bold;
     transition: all .15s linear;
-  }
-  .btn:hover {
-    background: transparent;
-    color: #298d70;
-    border: 2px solid #298d70;
-    cursor: pointer;
-  }
-  .btn:active {
-    background-color: #298d70;
+
+    &:hover {
+      background: #118060;
+    }
+
+    &:active {
+      background-color: #0d5f48;
+    }
   }
 </style>

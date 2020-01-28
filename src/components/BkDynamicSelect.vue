@@ -63,12 +63,14 @@ export default {
     color: #FFF;
     cursor: pointer;
     background: #118060;
-  }
-  .tab-button:hover {
-    background: #118060;
-  }
-  .tab-button.active {
-    background-color: #0d5f48;
+
+    &:hover {
+      background: #118060;
+    }
+
+    &.active {
+      background-color: #0d5f48;
+    }
   }
   .tab {
     /* border: 1px solid #ccc; */

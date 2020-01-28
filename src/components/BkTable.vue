@@ -38,15 +38,24 @@ export default {
     height: 20px;
     width: 20px;
   }
-  table th,
-  table td {
-    padding: 10px;
-  }
-  table thead {
-    background: #108060;
-    color: #FFF;
-  }
-  table tbody tr:nth-child(even){background-color: #f2f2f2;}
+  table {
+    th, td {
+      padding: 10px;
+    }
 
-  table tbody tr:hover {background-color: #ddd;}
+    thead {
+      background: #108060;
+      color: #FFF;
+    }
+
+    tbody tr {
+      &:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
 </style>

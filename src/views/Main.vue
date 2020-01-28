@@ -54,15 +54,17 @@ export default {
     margin: 0 auto;
     margin-top: 20px;
     text-align: center;
-  }
-  .input-container > input {
-    margin: 10px 0;
-    height: 25px;
+
+    > input {
+      margin: 10px 0;
+      height: 25px;
+    }
   }
   .table-container {
     margin-top: 20px;
-  }
-  .table-container h2 {
+    h2 {
     text-align: center;
+
+    }
   }
 </style>
