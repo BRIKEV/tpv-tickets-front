@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import BkButton from '@/components/BkButton.vue';
+import BkButton from '@/components/BkButton/BkButton.vue';
 import { doLogin } from '@/api';
 import storage from '@/persistence';
 

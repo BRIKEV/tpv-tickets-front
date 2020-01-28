@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import BkButton from '@/components/BkButton.vue';
+import BkButton from '@/components/BkButton/BkButton.vue';
 import { uploadPDF } from '../api';
 
 export default {

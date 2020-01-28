@@ -15,7 +15,7 @@
 
 <script>
 import BkTable from '@/components/BkTable.vue';
-import BkButton from '@/components/BkButton.vue';
+import BkButton from '@/components/BkButton/BkButton.vue';
 import { getTickets } from '@/api';
 
 export default {
