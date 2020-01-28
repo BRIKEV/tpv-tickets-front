@@ -67,7 +67,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .login {
     height: 100vh;
     padding: 0 25px;

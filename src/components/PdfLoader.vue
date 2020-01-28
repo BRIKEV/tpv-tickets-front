@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .load-pdf-container {
     display: flex;
     flex-direction: column;

@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .dynamic-container {
     margin-bottom: 100px;
   }

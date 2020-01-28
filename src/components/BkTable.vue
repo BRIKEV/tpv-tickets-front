@@ -26,9 +26,17 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
   table {
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+    font-size: 1.2rem;
     border: 1px solid #ddd;
+  }
+  .checkbox {
+    height: 20px;
+    width: 20px;
   }
   table th,
   table td {
@@ -41,17 +49,4 @@ export default {
   table tbody tr:nth-child(even){background-color: #f2f2f2;}
 
   table tbody tr:hover {background-color: #ddd;}
-</style>
-
-<style scoped>
-  table {
-    width: 100%;
-    margin: 25px 0;
-    text-align: center;
-    font-size: 1.2rem;
-  }
-  .checkbox {
-    height: 20px;
-    width: 20px;
-  }
 </style>

@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .btn {
     background: #118060;
     border-radius: 30px;
