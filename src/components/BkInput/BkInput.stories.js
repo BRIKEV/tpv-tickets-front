@@ -37,4 +37,4 @@ storiesOf('Components/BkInput', module)
     </div>
 
     `,
-}));
+  }));

@@ -8,6 +8,7 @@
           name="username"
           type="text"
           :required="true"
+          color="primary"
           :label="$t('login.usernameLabel')"
         />
         <BkInput
@@ -16,6 +17,7 @@
           name="password"
           type="password"
           :required="true"
+          color="primary"
           :label="$t('login.passwordLabel')"
         />
       <bk-button
