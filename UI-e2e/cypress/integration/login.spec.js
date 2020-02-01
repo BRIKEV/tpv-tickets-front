@@ -11,7 +11,7 @@ describe('Login view', () => {
     cy.get('[data-cy=btn]').should('be.visible');
   });
 
-  it('Testing inputs', () => {
+  it.only('Testing inputs', () => {
     const typedText = 'new user';
     cy.get('[data-cy=username]').type(typedText).should('have.value', typedText);
     cy.get('[data-cy=password]').type(typedText).should('have.value', typedText);
