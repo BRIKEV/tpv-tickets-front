@@ -1,6 +1,7 @@
 <template>
   <div class="input-container">
     <input
+      :data-cy="dataCy"
       :value="value"
       :name="name"
       :type="type"
@@ -15,6 +16,7 @@
 export default {
   name: 'BkInput',
   props: {
+    dataCy: String,
     value: String,
     name: String,
     type: String,
