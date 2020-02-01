@@ -10,8 +10,9 @@
 </template>
 
 <script>
-import BkDynamicSelect from '@/components/BkDynamicSelect.vue';
-import BkHeader from '@/components/BkHeader.vue';
+import storage from '@/persistence';
+
+const { removeItem } = storage('cookieStorage');
 
 export default {
   name: 'Admin',
@@ -24,13 +25,12 @@ export default {
     };
   },
 
-  components: {
-    BkHeader,
-    BkDynamicSelect,
-  },
-
   methods: {
     changesHandler(selected) {
+      if (selected.includes('Exit')) {
+        removeItem('session_token');
+        this.$router.push({ name: 'Login' });
+      }
       this.currentTab = selected;
     },
   },

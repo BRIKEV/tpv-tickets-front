@@ -18,26 +18,24 @@
         class="btn"
         type="submit"
       >
-          {{ $t('pdf.buton') }}
+          {{ $t('pdf.button') }}
       </bk-button>
     </form>
   </div>
 </template>
 
 <script>
-import BkButton from '@/components/BkButton.vue';
 import { uploadPDF } from '../api';
 
 export default {
   name: 'PdfLoader',
-  components: {
-    BkButton,
-  },
+
   data() {
     return {
       pdfFile: null,
     };
   },
+
   methods: {
     setFile(evt) {
       const [file] = evt.target.files;
