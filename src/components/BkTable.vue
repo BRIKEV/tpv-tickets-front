@@ -27,12 +27,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  @import "@/theme/index.scss";
+  $table-odd-row: #ddd;
+  $table-even-row: #f2f2f2;
   table {
     width: 100%;
     margin: 25px 0;
     text-align: center;
-    font-size: 1.2rem;
-    border: 1px solid #ddd;
+    font-size: $fs-large;
+    border: 1px solid $table-odd-row;
+    line-height: $base-line-height;
   }
   .checkbox {
     height: 20px;
@@ -44,17 +48,17 @@ export default {
     }
 
     thead {
-      background: #108060;
-      color: #FFF;
+      background: $brand;
+      color: $white;
     }
 
     tbody tr {
       &:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: $table-even-row;
       }
 
       &:hover {
-        background-color: #ddd;
+        background-color: $table-odd-row;
       }
     }
   }
