@@ -8,8 +8,8 @@ storiesOf('Components/BkInput', module)
   .add('Username example', () => ({
     components: { BkInput },
     template: `
-      <div style="background: grey; padding: 20px">
-        <BkInput v-model="value" type="text" name="input" label="User" />
+      <div style="background: lightgrey; padding: 20px">
+        <BkInput v-model="value" type="text" name="input" label="User" color="primary"/>
         <div>
           <p>Value: {{ value }}</p>
         </div>
@@ -20,4 +20,21 @@ storiesOf('Components/BkInput', module)
         value: '',
       };
     },
-  }));
+  }))
+  .add('Input with secundary color', () => ({
+    components: { BkInput },
+    data() {
+      return {
+        value: '',
+      };
+    },
+    template: `
+    <div>
+      <BkInput v-model="value" type="text" name="input" label="User" color="secundary" />
+      <div>
+        <p>Value: {{ value }}</p>
+      </div>
+    </div>
+
+    `,
+}));

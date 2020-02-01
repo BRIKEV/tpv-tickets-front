@@ -6,9 +6,10 @@
       :name="name"
       :type="type"
       required
+      :class="color"
       @input="$emit('input', $event.target.value)"
     />
-    <label>{{ label }}</label>
+    <label :class="color">{{ label }}</label>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ export default {
     type: String,
     label: String,
     required: Boolean,
+    color: String,
   },
 };
 </script>
@@ -31,21 +33,28 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
     position: relative;
     margin: 30px 0;
     input {
-      color: $white;
       font-size: $fs-small;
       border: none;
       width: 100%;
       outline: none;
       background: none;
       height: 50px;
-      border-bottom: 2px solid $white;
       &:active ~label,
       &:focus ~label,
       &:valid ~label {
         bottom: 50px;
+      }
+      &.primary {
+        color: $white;
+        border-bottom: 2px solid $white;
+      }
+      &.secundary {
+        color: black;
+        border-bottom: 2px solid black;
       }
     }
     label {
@@ -55,6 +64,12 @@ export default {
       font-size: $fs-large;
       font-weight: 700;
       transition: all .3s ease;
+      &.primary {
+        color: $white;
+      }
+      &.secundary {
+        color: black;
+      }
     }
   }
 </style>
