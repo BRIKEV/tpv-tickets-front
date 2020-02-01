@@ -1,6 +1,6 @@
 <template>
   <div class="load-pdf-container">
-    <h1>{{ $t('pdf.title') }}</h1>
+    <h3>{{ $t('pdf.title') }}</h3>
     <form novalidate @submit.prevent="sendFile">
       <div class="pdf-container">
         <label for="file"><span>{{ $t('pdf.fileInput') }}</span></label>
@@ -18,26 +18,24 @@
         class="btn"
         type="submit"
       >
-          {{ $t('pdf.buton') }}
+          {{ $t('pdf.button') }}
       </bk-button>
     </form>
   </div>
 </template>
 
 <script>
-import BkButton from '@/components/BkButton/BkButton.vue';
 import { uploadPDF } from '../api';
 
 export default {
   name: 'PdfLoader',
-  components: {
-    BkButton,
-  },
+
   data() {
     return {
       pdfFile: null,
     };
   },
+
   methods: {
     setFile(evt) {
       const [file] = evt.target.files;
@@ -55,13 +53,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "@/theme/index.scss";
+
+  $file-border-color: #000;
+
   .load-pdf-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    h3 {
+      font-size: $fs-h3;
+      text-align: center;
+      line-height: $base-line-height;
+    }
   }
   form {
     width: 80%;
@@ -74,23 +81,25 @@ export default {
     justify-content: center;
     margin: 0 auto;
     height: 200px;
-    border: 2px dotted #000;
+    border: 2px dotted $file-border-color;
     border-radius: 10px;
     position: relative;
     margin-top: 30px;
-  }
-  .pdf-container label {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .pdf-container input {
-    position: absolute;
-    visibility: hidden;
+
+    label {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
   }
   .btn {
     width: 100%;
