@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { required, minLength } from 'vuelidate/lib/validators';
 import { doLogin } from '@/api';
 import storage from '@/persistence';
 
@@ -44,6 +45,20 @@ export default {
       user: {
         username: '',
         password: '',
+      },
+    };
+  },
+
+  validations() {
+    return {
+      user: {
+        username: {
+          required,
+        },
+        password: {
+          required,
+          minLength: minLength(4),
+        },
       },
     };
   },
