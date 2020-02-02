@@ -82,8 +82,20 @@ export default {
           date,
           price,
         })
-          .then(() => console.log('SUCCESS'))
-          .catch(err => console.err(err));
+          .then(() => this.$notify({
+            group: 'notify',
+            title: 'Get tickets success',
+            text: 'Success',
+            duration: 3000,
+            type: 'success',
+          }))
+          .catch(() => this.$notify({
+            group: 'notify',
+            title: 'Get tickets error',
+            text: 'Error',
+            duration: 3000,
+            type: 'error',
+          }));
       }
     },
   },

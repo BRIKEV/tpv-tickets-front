@@ -71,7 +71,13 @@ export default {
             setItem('session_token', data.jwt);
             this.$router.push('/');
           })
-          .catch(() => console.log('error'));
+          .catch(() => this.$notify({
+            group: 'notify',
+            title: 'Login error',
+            text: 'Error',
+            duration: 3000,
+            type: 'error',
+          }));
       }
     },
   },
