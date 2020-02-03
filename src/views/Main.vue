@@ -7,6 +7,7 @@
           name="date"
           type="text"
           :required="true"
+          data-cy="main-date-input"
           color="secundary"
           :label="$t('ticketForm.date')"
         />
@@ -15,6 +16,7 @@
           name="price"
           type="text"
           :required="true"
+          data-cy="main-price-input"
           color="secundary"
           :label="$t('ticketForm.price')"
         />
