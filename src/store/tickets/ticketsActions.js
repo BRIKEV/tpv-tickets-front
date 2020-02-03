@@ -9,7 +9,10 @@ export default {
   },
   updateTicket({ commit, dispatch }, payload) {
     return register(payload)
-      .then(() => dispatch('sendSucces', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') }))
+      .then(() => {
+        dispatch('sendSucces', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') });
+        dispatch('getTickets');
+      })
       .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.uploadPdfError') }));
   },
 };
