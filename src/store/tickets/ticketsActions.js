@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { getTickets, register } from '@/api';
+import i18n from '@/lang/i18n';
 
 export default {
   getTickets({ commit }) {
@@ -8,7 +9,7 @@ export default {
   },
   updateTicket({ commit, dispatch }, payload) {
     return register(payload)
-      .then(() => dispatch('sendSucces', { title: 'SUCCESS', text: 'Ticket check successfully' }))
-      .catch(() => dispatch('sendError', { title: 'ERROR', text: 'The ticket could not be checked' }));
+      .then(() => dispatch('sendSucces', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') }))
+      .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.uploadPdfError') }));
   },
 };

@@ -22,4 +22,10 @@ export default {
     fileInput: 'Select a pdf',
     button: 'Upload',
   },
+  notification: {
+    titleSuccess: 'SUCCESS',
+    titleError: 'ERROR',
+    uploadPdfSuccess: 'Ticket check successfully',
+    uploadPdfError: 'The ticket could not be checked',
+  },
 };
