@@ -38,7 +38,6 @@ import {
   mapState, mapGetters, mapActions,
 } from 'vuex';
 import { required } from 'vuelidate/lib/validators';
-import { register } from '@/api';
 
 export default {
   name: 'Main',
@@ -75,28 +74,14 @@ export default {
   },
 
   methods: {
-    ...mapActions(['getTickets']),
+    ...mapActions(['getTickets', 'updateTicket']),
     send() {
       const { date, price } = this.ticket;
       if (!this.$v.$invalid) {
-        register({
+        this.updateTicket({
           date,
           price,
-        })
-          .then(() => this.$notify({
-            group: 'notify',
-            title: 'Get tickets success',
-            text: 'Success',
-            duration: 3000,
-            type: 'success',
-          }))
-          .catch(() => this.$notify({
-            group: 'notify',
-            title: 'Get tickets error',
-            text: 'Error',
-            duration: 3000,
-            type: 'error',
-          }));
+        });
       }
     },
   },
