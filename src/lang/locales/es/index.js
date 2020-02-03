@@ -25,7 +25,9 @@ export default {
   notification: {
     titleSuccess: 'SUCCESS',
     titleError: 'ERROR',
-    uploadPdfSuccess: 'Ticket comprobado con éxito',
-    uploadPdfError: 'El ticket no se ha podido comprobar',
+    updatePdfSuccess: 'Ticket comprobado con éxito',
+    updatePdfError: 'El ticket no se ha podido comprobar',
+    uploadPdfSuccess: 'Se ha subido el PDF correctamente',
+    uploadPdfError: 'No se ha podido subir el PDF',
   },
 };

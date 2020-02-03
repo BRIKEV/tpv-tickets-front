@@ -25,7 +25,9 @@ export default {
   notification: {
     titleSuccess: 'SUCCESS',
     titleError: 'ERROR',
-    uploadPdfSuccess: 'Ticket check successfully',
-    uploadPdfError: 'The ticket could not be checked',
+    updatePdfSuccess: 'Ticket check successfully',
+    updatePdfError: 'The ticket could not be checked',
+    uploadPdfSuccess: 'PDF upload successfully',
+    uploadPdfError: 'PDF could not be uploaded',
   },
 };
