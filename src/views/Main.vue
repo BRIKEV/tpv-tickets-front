@@ -37,7 +37,7 @@
 
 <script>
 import {
-  mapState, mapGetters, mapActions,
+  mapGetters, mapActions,
 } from 'vuex';
 import { required } from 'vuelidate/lib/validators';
 
@@ -71,7 +71,6 @@ export default {
   },
 
   computed: {
-    ...mapState(['items']),
     ...mapGetters(['getByTitle']),
   },
 
