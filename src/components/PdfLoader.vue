@@ -3,7 +3,10 @@
     <h3>{{ $t('pdf.title') }}</h3>
     <form novalidate @submit.prevent="sendFile">
       <div class="pdf-container">
-        <label for="file"><span>{{ $t('pdf.fileInput') }}</span></label>
+        <label for="file">
+          <span v-if="!selectedName">{{ $t('pdf.fileInput') }}</span>
+          <span v-else>{{ selectedName }}</span>
+        </label>
         <input
           accept="application/pdf"
           name="file"
@@ -33,6 +36,7 @@ export default {
   data() {
     return {
       pdfFile: null,
+      selectedName: '',
     };
   },
 
@@ -40,6 +44,7 @@ export default {
     ...mapActions(['sendPDF']),
     setFile(evt) {
       const [file] = evt.target.files;
+      this.selectedName = file.name;
       this.pdfFile = file;
     },
     sendFile(evt) {
