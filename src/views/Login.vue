@@ -29,7 +29,6 @@
       >
         {{ $t('login.button') }}
       </BkButton>
-      {{ loading }}
     </form>
   </div>
 </template>
