@@ -20,7 +20,12 @@
           color="secundary"
           :label="$t('ticketForm.price')"
         />
-      <BkButton :isLoading="loading">{{ $t('ticketForm.button') }}</BkButton>
+      <BkButton
+        :disabled="loading"
+        :isLoading="loading"
+      >
+        {{ $t('ticketForm.button') }}
+      </BkButton>
     </form>
     <div class="tickets-container">
       <h3>{{ $t('table.title') }}</h3>

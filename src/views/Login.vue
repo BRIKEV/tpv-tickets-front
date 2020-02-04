@@ -20,13 +20,16 @@
           color="primary"
           :label="$t('login.passwordLabel')"
         />
-      <bk-button
+      <BkButton
         data-cy="btn"
         class="btn"
         :isLoading="loading"
-        @click="handleLogin">
-          {{ $t('login.button') }}
-      </bk-button>
+        :disabled="loading"
+        @click="handleLogin"
+      >
+        {{ $t('login.button') }}
+      </BkButton>
+      {{ loading }}
     </form>
   </div>
 </template>

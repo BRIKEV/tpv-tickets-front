@@ -16,14 +16,15 @@
           type="file"
         />
       </div>
-      <bk-button
+      <BkButton
         data-cy="btn"
         class="btn"
         type="submit"
+        :disabled="loading"
         :isLoading="loading"
       >
           {{ $t('pdf.button') }}
-      </bk-button>
+      </BkButton>
     </form>
   </div>
 </template>
