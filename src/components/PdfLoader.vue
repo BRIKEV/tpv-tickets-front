@@ -20,6 +20,7 @@
         data-cy="btn"
         class="btn"
         type="submit"
+        :isLoading="loading"
       >
           {{ $t('pdf.button') }}
       </bk-button>
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'PdfLoader',
@@ -40,8 +41,15 @@ export default {
     };
   },
 
+  computed: {
+    ...mapGetters(['loading']),
+  },
+
   methods: {
     ...mapActions(['sendPDF']),
+    ...mapMutations({
+      setLoading: 'loading/SET_LOADING',
+    }),
     setFile(evt) {
       const [file] = evt.target.files;
       this.selectedName = file.name;
@@ -51,6 +59,7 @@ export default {
       if (evt.target.checkValidity()) {
         const data = new FormData();
         data.append('file', this.pdfFile);
+        this.setLoading(true);
         return this.sendPDF(data);
       }
       return null;
