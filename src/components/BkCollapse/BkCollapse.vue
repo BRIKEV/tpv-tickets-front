@@ -3,7 +3,6 @@
     class="container"
     :class="{ 'not-expanded': !this.expanded }">
       <div
-        data-cy="toggle-collapse"
         class="header"
         @click="toggleCardState">
           <p class="title" name="header">{{ title }}</p>
