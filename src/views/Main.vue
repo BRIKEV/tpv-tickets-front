@@ -25,8 +25,9 @@
           color="secundary"
           :label="$t('ticketForm.price')"
         />
-        <div class="error" v-if="!$v.ticket.price.mustBeDecimal">{{ $t('error.priceFormat') }}</div>
-        <div class="error" v-if="!$v.ticket.price.mmaxLength">{{ $t('error.priceFormat') }}</div>
+        <div class="error" v-if="!$v.ticket.price.mustBeDecimal || !$v.ticket.price.mmaxLength">
+          {{ $t('error.priceFormat') }}
+        </div>
       <BkButton
         :disabled="loading"
         :isLoading="loading"
