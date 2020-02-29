@@ -5,7 +5,10 @@
       data-cy="pdf-loader"
       @sendFile="sendPDF"
       :uploaded="upload"
-      :loading="loading"/>
+      :loading="loading"
+      :title="$t('pdf.fileInput')"
+      :btnText="$t('pdf.button')"
+      />
   </div>
 </template>
 

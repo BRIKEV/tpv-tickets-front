@@ -5,7 +5,7 @@
         <span
           data-cy="select-pdf"
           v-if="!selectedName">
-            {{ $t('pdf.fileInput') }}
+            {{ title }}
         </span>
         <span
           data-cy="file-name"
@@ -29,7 +29,7 @@
       :disabled="loading"
       :isLoading="loading"
     >
-        {{ $t('pdf.button') }}
+        {{ btnText }}
     </BkButton>
   </form>
 </template>
@@ -48,6 +48,8 @@ export default {
 
   props: {
     loading: Boolean,
+    title: String,
+    btnText: String,
   },
 
   methods: {
