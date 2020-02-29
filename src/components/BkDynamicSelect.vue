@@ -27,14 +27,14 @@
 
 <script>
 import Main from '@/views/Main.vue';
-import PdfLoader from '@/components/PdfLoader.vue';
+import Pdf from '@/views/Pdf.vue';
 
 export default {
   name: 'BkDynamicSelect',
 
   components: {
     Main,
-    PdfLoader,
+    Pdf,
   },
 
   props: {
