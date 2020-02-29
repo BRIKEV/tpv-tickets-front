@@ -54,7 +54,7 @@ import {
   mapGetters, mapActions, mapMutations,
 } from 'vuex';
 import { required, maxLength } from 'vuelidate/lib/validators';
-import { contains, dateFormat } from '@/utils';
+import { priceFormat, dateFormat } from '@/utils';
 
 export default {
   name: 'Main',
@@ -84,7 +84,7 @@ export default {
         price: {
           required,
           mmaxLength: maxLength(5),
-          mustBeDecimal: contains(','),
+          mustBeDecimal: priceFormat,
         },
       },
     };
