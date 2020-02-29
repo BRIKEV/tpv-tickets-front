@@ -25,9 +25,9 @@ storiesOf('Components/BkCollapse', module)
                 </div>
             </template>
 
-        <template #body>
-            <h2>Aqui va el contenido</h2>
-        </template>
+        <div>
+            <h2>Here will be the content</h2>
+        </div>
       </BkCollapse>
         `,
   }));
