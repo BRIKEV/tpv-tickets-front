@@ -121,7 +121,7 @@ export default {
   .main {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
+    padding: 0 calculateRem(15px);
     h3 {
       text-align: center;
       font-size: $fs-h3;
@@ -133,7 +133,7 @@ export default {
     flex-direction: column;
     width: 80%;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: calculateRem(20px);
     text-align: center;
   }
   .tickets-container {

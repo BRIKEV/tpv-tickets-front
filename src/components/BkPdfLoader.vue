@@ -75,11 +75,11 @@ export default {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 200px;
-    border: 2px dotted $file-border-color;
-    border-radius: 10px;
+    height: calculateRem(200px);
+    border: calculateRem(2px) dotted $file-border-color;
+    border-radius: calculateRem(10px);
     position: relative;
-    margin-top: 30px;
+    margin-top: calculateRem(30px);
 
     label {
       width: 100%;
@@ -98,6 +98,6 @@ export default {
   }
   .btn {
     width: 100%;
-    margin: 20px 0;
+    margin: calculateRem(20px) 0;
   }
 </style>

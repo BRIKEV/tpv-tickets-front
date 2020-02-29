@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Pdf',
@@ -18,9 +18,6 @@ export default {
 
   methods: {
     ...mapActions(['sendPDF']),
-    ...mapMutations({
-      setLoading: 'SET_LOADING',
-    }),
   },
 };
 </script>
