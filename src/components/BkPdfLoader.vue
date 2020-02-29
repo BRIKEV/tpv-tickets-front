@@ -2,8 +2,16 @@
   <form novalidate @submit.prevent="sendFile">
     <div class="pdf-container">
       <label for="file">
-        <span v-if="!selectedName">{{ $t('pdf.fileInput') }}</span>
-        <span v-else>{{ selectedName }}</span>
+        <span
+          data-cy="select-pdf"
+          v-if="!selectedName">
+            {{ $t('pdf.fileInput') }}
+        </span>
+        <span
+          data-cy="file-name"
+          v-else>
+            {{ selectedName }}
+        </span>
       </label>
       <input
         accept="application/pdf"
@@ -15,7 +23,7 @@
       />
     </div>
     <BkButton
-      data-cy="btn"
+      data-cy="btn-pdf-loader"
       class="btn"
       type="submit"
       :disabled="loading"
@@ -53,6 +61,7 @@ export default {
         const data = new FormData();
         data.append('file', this.pdfFile);
         this.$emit('sendFile', data);
+        this.selectedName = '';
       }
       return null;
     },

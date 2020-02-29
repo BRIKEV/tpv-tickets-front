@@ -1,18 +1,21 @@
 <template>
   <div class="load-pdf-container">
-    <h3>{{ $t('pdf.title') }}</h3>
+    <h3 data-cy="pdf-title">{{ $t('pdf.title') }}</h3>
     <BkPdfLoader
+      data-cy="pdf-loader"
       @sendFile="sendPDF"
+      :uploaded="upload"
       :loading="loading"/>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Pdf',
   computed: {
+    ...mapState(['upload']),
     ...mapGetters(['loading']),
   },
 
