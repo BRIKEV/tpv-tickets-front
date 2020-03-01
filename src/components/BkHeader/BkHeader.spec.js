@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { shallowMount, mount } from '@vue/test-utils';
 import BkHeader from '@/components/BkHeader/BkHeader.vue';
 
