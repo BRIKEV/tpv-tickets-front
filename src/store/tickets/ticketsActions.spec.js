@@ -1,5 +1,5 @@
 import ticketsActions from './ticketsActions';
-import { getData, register } from '@/api';
+import { getData, register, uploadPDF } from '@/api';
 
 jest.mock('@/api');
 
@@ -19,6 +19,17 @@ describe('Tickets actions', () => {
     await ticketsActions.updateTicket({ commit, dispatch });
     expect(dispatch).toHaveBeenCalledWith('getTickets');
     expect(dispatch).toHaveBeenCalledWith('sendSucces', { text: 'Ticket comprobado con éxito', title: 'SUCCESS' });
+    expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
+  });
+
+  it('Send pdf', async () => {
+    const commit = jest.fn();
+    const dispatch = jest.fn();
+    uploadPDF.mockResolvedValueOnce(true);
+    await ticketsActions.sendPDF({ commit, dispatch });
+    expect(commit).toHaveBeenCalledWith('SET_LOADING', true);
+    expect(dispatch).toHaveBeenCalledWith('sendSucces', { text: 'Se ha subido el PDF correctamente', title: 'SUCCESS' });
+    expect(dispatch).toHaveBeenCalledWith('getTickets');
     expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
   });
 });
