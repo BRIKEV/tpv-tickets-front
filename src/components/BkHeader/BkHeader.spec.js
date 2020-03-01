@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import BkHeader from '@/components/BkHeader/BkHeader.vue';
 
 describe('BkHeader component', () => {
@@ -9,5 +9,9 @@ describe('BkHeader component', () => {
       propsData: { title },
     });
     expect(wrapper.text()).toMatch(title);
+  });
+  it('Should be render correctly', () => {
+    const wrapper = mount(BkHeader);
+    expect(wrapper.element).toMatchSnapshot();
   });
 });
