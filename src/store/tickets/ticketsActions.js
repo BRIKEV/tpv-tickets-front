@@ -1,9 +1,9 @@
-import { getTickets, register, uploadPDF } from '@/api';
+import { getData, register, uploadPDF } from '@/api';
 import i18n from '@/lang/i18n';
 
 export default {
   getTickets({ commit }) {
-    return getTickets()
+    return getData()
       .then(({ data }) => commit('SET_ITEMS', data));
   },
   updateTicket({ commit, dispatch }, payload) {
