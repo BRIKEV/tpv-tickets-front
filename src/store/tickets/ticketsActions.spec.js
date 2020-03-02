@@ -18,7 +18,7 @@ describe('Tickets actions', () => {
     register.mockResolvedValueOnce(true);
     await ticketsActions.updateTicket({ commit, dispatch });
     expect(dispatch).toHaveBeenCalledWith('getTickets');
-    expect(dispatch).toHaveBeenCalledWith('sendSucces', { text: 'Ticket comprobado con éxito', title: 'SUCCESS' });
+    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: 'Ticket comprobado con éxito', title: 'SUCCESS' });
     expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
   });
 
@@ -28,7 +28,7 @@ describe('Tickets actions', () => {
     uploadPDF.mockResolvedValueOnce(true);
     await ticketsActions.sendPDF({ commit, dispatch });
     expect(commit).toHaveBeenCalledWith('SET_LOADING', true);
-    expect(dispatch).toHaveBeenCalledWith('sendSucces', { text: 'Se ha subido el PDF correctamente', title: 'SUCCESS' });
+    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: 'Se ha subido el PDF correctamente', title: 'SUCCESS' });
     expect(dispatch).toHaveBeenCalledWith('getTickets');
     expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
   });

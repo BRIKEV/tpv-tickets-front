@@ -9,7 +9,7 @@ export default {
   updateTicket({ commit, dispatch }, payload) {
     return register(payload)
       .then(() => {
-        dispatch('sendSucces', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.updatePdfSuccess') });
+        dispatch('sendSuccess', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.updatePdfSuccess') });
         dispatch('getTickets');
       })
       .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.updatePdfError') }))
@@ -19,7 +19,7 @@ export default {
     commit('SET_LOADING', true);
     return uploadPDF(payload)
       .then(() => {
-        dispatch('sendSucces', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') });
+        dispatch('sendSuccess', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') });
         dispatch('getTickets');
       })
       .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.uploadPdfError') }))

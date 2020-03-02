@@ -11,7 +11,7 @@ const NOTIFICATION_TYPES = {
 };
 
 const NOTIFICATION_ACTIONS = {
-  success: 'sendSucces',
+  success: 'sendSuccess',
   error: 'sendError',
 };
 
