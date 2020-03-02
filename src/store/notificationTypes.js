@@ -21,3 +21,11 @@ export const NOTIFICATION_UPLOAD = {
     text: i18n.t('notification.uploadPdfError'),
   },
 };
+
+export const NOTIFICATION_LOGIN = {
+  success: {},
+  error: {
+    title: i18n.t('notification.titleError'),
+    text: i18n.t('notification.loginError'),
+  },
+};

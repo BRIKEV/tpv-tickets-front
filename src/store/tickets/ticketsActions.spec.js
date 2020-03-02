@@ -1,6 +1,6 @@
 import ticketsActions from './ticketsActions';
 import { getData, register, uploadPDF } from '@/api';
-import { NOTIFICATION_UPDATE, NOTIFICATION_UPLOAD } from './notificationTypes';
+import { NOTIFICATION_UPDATE, NOTIFICATION_UPLOAD } from '../notificationTypes';
 
 jest.mock('@/api');
 
