@@ -1,5 +1,6 @@
 import ticketsActions from './ticketsActions';
 import { getData, register, uploadPDF } from '@/api';
+import { NOTIFICATION_UPDATE, NOTIFICATION_UPLOAD } from './notificationTypes';
 
 jest.mock('@/api');
 
@@ -18,7 +19,7 @@ describe('Tickets actions', () => {
     register.mockResolvedValueOnce(true);
     await ticketsActions.updateTicket({ commit, dispatch });
     expect(dispatch).toHaveBeenCalledWith('getTickets');
-    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: 'Ticket comprobado con éxito', title: 'SUCCESS' });
+    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: NOTIFICATION_UPDATE.success.text, title: NOTIFICATION_UPDATE.success.title });
     expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
   });
 
@@ -28,7 +29,7 @@ describe('Tickets actions', () => {
     uploadPDF.mockResolvedValueOnce(true);
     await ticketsActions.sendPDF({ commit, dispatch });
     expect(commit).toHaveBeenCalledWith('SET_LOADING', true);
-    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: 'Se ha subido el PDF correctamente', title: 'SUCCESS' });
+    expect(dispatch).toHaveBeenCalledWith('sendSuccess', { text: NOTIFICATION_UPLOAD.success.text, title: NOTIFICATION_UPLOAD.success.title });
     expect(dispatch).toHaveBeenCalledWith('getTickets');
     expect(commit).toHaveBeenCalledWith('SET_LOADING', false);
   });

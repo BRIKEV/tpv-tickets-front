@@ -1,5 +1,5 @@
 import { getData, register, uploadPDF } from '@/api';
-import i18n from '@/lang/i18n';
+import { NOTIFICATION_UPDATE, NOTIFICATION_UPLOAD } from './notificationTypes';
 
 export default {
   getTickets({ commit }) {
@@ -9,20 +9,20 @@ export default {
   updateTicket({ commit, dispatch }, payload) {
     return register(payload)
       .then(() => {
-        dispatch('sendSuccess', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.updatePdfSuccess') });
+        dispatch('sendSuccess', { title: NOTIFICATION_UPDATE.success.title, text: NOTIFICATION_UPDATE.success.text });
         dispatch('getTickets');
       })
-      .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.updatePdfError') }))
+      .catch(() => dispatch('sendError', { title: NOTIFICATION_UPDATE.error.title, text: NOTIFICATION_UPDATE.error.text }))
       .finally(() => commit('SET_LOADING', false));
   },
   sendPDF({ commit, dispatch }, payload) {
     commit('SET_LOADING', true);
     return uploadPDF(payload)
       .then(() => {
-        dispatch('sendSuccess', { title: i18n.t('notification.titleSuccess'), text: i18n.t('notification.uploadPdfSuccess') });
+        dispatch('sendSuccess', { title: NOTIFICATION_UPLOAD.success.title, text: NOTIFICATION_UPLOAD.success.text });
         dispatch('getTickets');
       })
-      .catch(() => dispatch('sendError', { title: i18n.t('notification.titleError'), text: i18n.t('notification.uploadPdfError') }))
+      .catch(() => dispatch('sendError', { title: NOTIFICATION_UPLOAD.error.title, text: NOTIFICATION_UPLOAD.error.text }))
       .finally(() => commit('SET_LOADING', false));
   },
 };
