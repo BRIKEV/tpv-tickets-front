@@ -60,24 +60,22 @@ describe('Main view', () => {
   });
 
   it('Should show a modal and delete a ticket', () => {
-    const TOTAL_ROWS = 8;
-    cy.route('DELETE', '/api/v1/tickets/1', 'fixture:deletedTicket').as('deletedTicket');
-    cy.contains('first.pdf').click({ force: true });
+    const TOTAL_ROWS = 4;
+    cy.route('DELETE', '/api/v1/tickets/30', 'fixture:deletedTicket').as('deletedTicket');
+    cy.contains('Tickets sin pdf').click({ force: true });
     cy.get('table > tbody > tr').should('have.length', TOTAL_ROWS);
-    cy.get('[data-cy=deleteBtn-1]').click();
+    cy.get('[data-cy=deleteBtn-30]').click();
     cy.get('.deleteBtn').click();
     cy.wait('@deletedTicket');
-    cy.contains('first.pdf').click({ force: true });
     cy.get('.notify .success').should('be.visible');
+    cy.contains('Tickets sin pdf').click({ force: true });
     cy.get('table > tbody > tr').should('have.length', TOTAL_ROWS - 1);
   });
 
   it('Should show a modal and delete a ticket badly', () => {
-    const TOTAL_ROWS = 8;
     cy.route('DELETE', '/api/v1/tickets/1', 'fixture:deletedTicket').as('deletedTicket');
-    cy.contains('first.pdf').click({ force: true });
-    cy.get('table > tbody > tr').should('have.length', TOTAL_ROWS);
-    cy.get('[data-cy=deleteBtn-4]').click();
+    cy.contains('Tickets sin pdf').click({ force: true });
+    cy.get('[data-cy=deleteBtn-31]').click();
     cy.get('.deleteBtn').click();
     cy.get('.error').should('be.visible');
   });
