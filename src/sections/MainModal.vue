@@ -1,24 +1,22 @@
 <template>
   <BkModal
+    class="mainModal"
     v-if="opened"
     @close="close"
   >
-    <h3 slot="header">custom header</h3>
     <template #body>
+      <span class="warning material-icons">
+      warning
+      </span>
       <div>
-          <span class="material-icons">
-          warning
-          </span>
-          <div>
-            Are you sure you want to delete ticket?
-          </div>
+        Are you sure you want to delete ticket?
       </div>
     </template>
-    <template slot="footer">
-      <BkButton @btn-clicked="handleDeleteClick">
+    <template #footer>
+      <BkButton class="firstBtn" @btn-clicked="handleDeleteClick">
           Discard
       </BkButton>
-      <BkButton @btn-clicked="handleCancelClick">
+      <BkButton @btn-clicked="handleCancelClick" outline>
           Cancel
       </BkButton>
     </template>
@@ -49,3 +47,32 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+@import "@/theme/index.scss";
+
+.mainModal {
+  &::v-deep .modal-header {
+      justify-content: flex-start;
+      padding: calculateRem(30px) calculateRem(30px) 0 calculateRem(30px);
+  }
+  &::v-deep .modal-body {
+    min-height: calculateRem(100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: calculateRem(25px);
+  }
+  &::v-deep .modal-footer {
+    display: flex;
+    justify-content: center;
+    .firstBtn {
+      margin-right: calculateRem(15px);
+    }
+  }
+  .warning {
+    font-size: $fs-h1;
+    color: $warning;
+  }
+}
+</style>
