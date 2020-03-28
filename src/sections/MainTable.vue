@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'BkTable',
+  name: 'MainTable',
 
   props: {
     data: Array,

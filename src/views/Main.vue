@@ -53,7 +53,7 @@
             :title="title"
             :isOpened="isOpened"
           >
-            <BkTable
+            <MainTable
               :data="dataTable"
               @onDelete="handleClickDeleteIcon"
             />
@@ -75,12 +75,13 @@ import {
 } from 'vuex';
 import { required, maxLength } from 'vuelidate/lib/validators';
 import { priceFormat, dateFormat } from '@/utils';
-import { MainModal } from '../sections';
+import { MainModal, MainTable } from '../sections';
 
 export default {
   name: 'Main',
   components: {
     MainModal,
+    MainTable,
   },
   data() {
     return {
