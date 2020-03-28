@@ -15,8 +15,8 @@ describe('Main view', () => {
     cy.contains('nav', 'BRIKEV');
   });
 
-  it(`The table should have a total of ${2} pdfs`, () => {
-    cy.get('.table-container').should('have.length', 2);
+  it(`The table should have a total of ${3} pdfs`, () => {
+    cy.get('.table-container').should('have.length', 3);
   });
 
   it('Testing the headers of the table', () => {
