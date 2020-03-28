@@ -4,14 +4,25 @@
       <tr>
         <th>{{ $t('table.date') }}</th>
         <th>{{ $t('table.price') }}</th>
-        <th>{{ $t('table.validated') }}</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in data" :key="item.length">
         <td>{{ item.formattedDate }}</td>
         <td>{{ item.price | formatPrice }}</td>
-        <td><input v-model="item.validated" class="checkbox" type="checkbox" disabled></td>
+        <td>
+          <input
+            v-model="item.validated"
+            class="checkbox"
+            type="checkbox"
+            disabled
+          >
+        </td>
+        <td @click="handleDeleteItem(item.id)" class="delete material-icons">
+          delete
+        </td>
       </tr>
     </tbody>
   </table>
@@ -23,6 +34,11 @@ export default {
 
   props: {
     data: Array,
+  },
+  methods: {
+    handleDeleteItem(id) {
+      this.$emit('onDelete', id);
+    },
   },
 };
 </script>
@@ -58,6 +74,10 @@ export default {
 
       &:hover {
         background-color: $table-odd-row;
+      }
+      .delete {
+        font-size: 20px;
+        cursor: pointer;
       }
     }
   }
