@@ -5,7 +5,7 @@
         <th>{{ $t('table.date') }}</th>
         <th>{{ $t('table.price') }}</th>
         <th></th>
-        <th></th>
+        <th v-if="hasNoPdf"></th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +21,7 @@
           >
         </td>
         <td
+          v-if="withoutPdf(item.pdfName)"
           class="delete material-icons"
           @click="handleDeleteItem(item.id)"
           :data-cy="`deleteBtn-${item.id}`"
@@ -39,9 +40,18 @@ export default {
   props: {
     data: Array,
   },
+  data() {
+    return {
+      hasNoPdf: false,
+    };
+  },
   methods: {
     handleDeleteItem(id) {
       this.$emit('onDelete', id);
+    },
+    withoutPdf(name) {
+      if (name === 'Tickets sin pdf') this.hasNoPdf = true;
+      return name === 'Tickets sin pdf';
     },
   },
 };
