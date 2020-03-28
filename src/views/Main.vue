@@ -13,7 +13,12 @@
           color="secundary"
           :label="$t('ticketForm.date')"
         />
-        <div class="error" v-if="!$v.ticket.date.mustBeDate">{{ $t('error.dateFormat') }}</div>
+        <div
+          class="error"
+          v-if="!$v.ticket.date.mustBeDate"
+        >
+          {{ $t('error.dateFormat') }}
+        </div>
 
         <BkInput
           v-model="$v.ticket.price.$model"
@@ -25,7 +30,10 @@
           color="secundary"
           :label="$t('ticketForm.price')"
         />
-        <div class="error" v-if="!$v.ticket.price.mustBeDecimal || !$v.ticket.price.mmaxLength">
+        <div
+          class="error"
+          v-if="!$v.ticket.price.mustBeDecimal || !$v.ticket.price.mmaxLength"
+        >
           {{ $t('error.priceFormat') }}
         </div>
       <BkButton
@@ -41,11 +49,23 @@
         class="table-container"
         v-for="(dataTable, title) in getByTitle"
         :key="dataTable.length">
-          <BkCollapse :title="title" :isOpened="isOpened">
-            <BkTable :data="dataTable"></BkTable>
+          <BkCollapse
+            :title="title"
+            :isOpened="isOpened"
+          >
+            <BkTable
+              :data="dataTable"
+              @onDelete="deleteTicket"
+            />
           </BkCollapse>
       </div>
     </div>
+    <MainModal
+      :opened="showModal"
+      @close="showModal = true"
+      @onCancel="handleCancelClick"
+      @delete="handleDeleteTicket"
+    />
   </div>
 </template>
 
@@ -55,10 +75,13 @@ import {
 } from 'vuex';
 import { required, maxLength } from 'vuelidate/lib/validators';
 import { priceFormat, dateFormat } from '@/utils';
+import { MainModal } from '../sections';
 
 export default {
   name: 'Main',
-
+  components: {
+    MainModal,
+  },
   data() {
     return {
       ticket: {
@@ -66,6 +89,7 @@ export default {
         price: '',
       },
       isOpened: false,
+      showModal: false,
       collapsibleItems: [],
     };
   },
@@ -108,6 +132,17 @@ export default {
           price,
         });
       }
+    },
+    deleteTicket() {
+      this.showModal = true;
+    },
+    handleDeleteTicket() {
+      console.log('LLamada al back');
+      this.showModal = false;
+    },
+    handleCancelClick() {
+      console.log('CANCEL');
+      this.showModal = false;
     },
     track() {
       this.$ga.page('/');
