@@ -3,15 +3,9 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-
-          <div class="modal-header">
-            <slot name="header" />
-          </div>
-
           <div class="modal-body">
             <slot name="body" />
           </div>
-
           <div class="modal-footer">
             <slot name="footer">
               <button class="modal-default-button" @click="$emit('close')">
@@ -33,6 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/theme/index.scss";
+$shadow: calculateRem(-1px) calculateRem(0px) calculateRem(7px) calculateRem(-4px) rgba(0,0,0,0.98);
 
 .modal-mask {
   position: fixed;
@@ -57,7 +52,7 @@ export default {
   padding: calculateRem(20px) calculateRem(30px);
   background-color: #fff;
   border-radius: calculateRem(2px);
-  box-shadow: 0 calculateRem(2px) calculateRem(8px) rgba(0, 0, 0, .33);
+  box-shadow: $shadow;
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
