@@ -29,6 +29,8 @@ export default {
     updatePdfError: 'The ticket could not be checked',
     uploadPdfSuccess: 'PDF upload successfully',
     uploadPdfError: 'PDF could not be uploaded',
+    deleteTicketSuccess: 'Ticket deleted successfully',
+    deleteTicketError: 'An error occurred while deleting the ticket',
     loginError: 'An error occurred while logging in',
   },
   error: {

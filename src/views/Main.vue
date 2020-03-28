@@ -55,7 +55,7 @@
           >
             <BkTable
               :data="dataTable"
-              @onDelete="deleteTicket"
+              @onDelete="handleClickDeleteIcon"
             />
           </BkCollapse>
       </div>
@@ -63,7 +63,7 @@
     <MainModal
       :opened="showModal"
       @close="showModal = true"
-      @onCancel="handleCancelClick"
+      @onCancel="showModal = false"
       @delete="handleDeleteTicket"
     />
   </div>
@@ -119,7 +119,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['getTickets', 'updateTicket']),
+    ...mapActions(['getTickets', 'updateTicket', 'deleteTicket']),
     ...mapMutations({
       setLoading: 'SET_LOADING',
     }),
@@ -133,15 +133,12 @@ export default {
         });
       }
     },
-    deleteTicket() {
+    handleClickDeleteIcon(id) {
+      this.ticketId = id;
       this.showModal = true;
     },
     handleDeleteTicket() {
-      console.log('LLamada al back');
-      this.showModal = false;
-    },
-    handleCancelClick() {
-      console.log('CANCEL');
+      this.deleteTicket(this.ticketId);
       this.showModal = false;
     },
     track() {
