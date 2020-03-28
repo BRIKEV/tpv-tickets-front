@@ -29,6 +29,8 @@ export default {
     updatePdfError: 'El ticket no se ha podido comprobar',
     uploadPdfSuccess: 'Se ha subido el PDF correctamente',
     uploadPdfError: 'No se ha podido subir el PDF',
+    deleteTicketSuccess: 'Se ha borrado el ticket correctamente',
+    deleteTicketError: 'No se ha podido borrar el ticket correctamente',
     loginError: 'Ha ocurrido un error al iniciar sesión',
   },
   error: {

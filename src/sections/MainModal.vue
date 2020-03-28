@@ -14,12 +14,13 @@
     </template>
     <template #footer>
       <BkButton
-        class="firstBtn"
+        class="deleteBtn"
         @btn-clicked="handleDeleteClick"
       >
         {{ $t('modal.btnDelete') }}
       </BkButton>
       <BkButton
+        class="acceptBtn"
         outline
         @btn-clicked="handleCancelClick"
       >
@@ -72,7 +73,7 @@ export default {
   &::v-deep .modal-footer {
     display: flex;
     justify-content: center;
-    .firstBtn {
+    .deleteBtn {
       margin-right: calculateRem(15px);
     }
   }

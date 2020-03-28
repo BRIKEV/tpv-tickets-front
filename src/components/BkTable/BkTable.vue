@@ -20,7 +20,11 @@
             disabled
           >
         </td>
-        <td @click="handleDeleteItem(item.id)" class="delete material-icons">
+        <td
+          class="delete material-icons"
+          @click="handleDeleteItem(item.id)"
+          :data-cy="`deleteBtn-${item.id}`"
+        >
           delete
         </td>
       </tr>
