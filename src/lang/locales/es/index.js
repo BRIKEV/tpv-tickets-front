@@ -35,4 +35,10 @@ export default {
     dateFormat: 'La fecha debe de tener el formato: dd-mm-aaaa',
     priceFormat: 'El precio debe tener el formato (ej: 19,00)',
   },
+  modal: {
+    icon: 'warning',
+    message: 'Seguro que quieres borrar este ticket?',
+    btnDelete: 'Borrar',
+    btnCancel: 'Cancelar',
+  },
 };

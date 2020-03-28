@@ -35,4 +35,10 @@ export default {
     dateFormat: 'The date must be in the format (dd-mm-yyyy)',
     priceFormat: 'The price must have the format (ex: 19,00)',
   },
+  modal: {
+    icon: 'warning',
+    message: 'Are you sure you want to delete ticket?',
+    btnDelete: 'Delete',
+    btnCancel: 'Cancel',
+  },
 };

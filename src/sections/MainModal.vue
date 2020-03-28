@@ -6,18 +6,24 @@
   >
     <template #body>
       <span class="warning material-icons">
-      warning
+        {{ $t('modal.icon') }}
       </span>
       <div>
-        Are you sure you want to delete ticket?
+        {{ $t('modal.message') }}
       </div>
     </template>
     <template #footer>
-      <BkButton class="firstBtn" @btn-clicked="handleDeleteClick">
-          Discard
+      <BkButton
+        class="firstBtn"
+        @btn-clicked="handleDeleteClick"
+      >
+        {{ $t('modal.btnDelete') }}
       </BkButton>
-      <BkButton @btn-clicked="handleCancelClick" outline>
-          Cancel
+      <BkButton
+        outline
+        @btn-clicked="handleCancelClick"
+      >
+          {{ $t('modal.btnCancel') }}
       </BkButton>
     </template>
   </BkModal>
