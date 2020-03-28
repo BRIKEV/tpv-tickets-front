@@ -12,10 +12,6 @@ exports[`BkModal component Should be render correctly 1`] = `
       class="modal-container"
     >
       <div
-        class="modal-header"
-      />
-       
-      <div
         class="modal-body"
       />
        
