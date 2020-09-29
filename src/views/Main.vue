@@ -36,12 +36,28 @@
         >
           {{ $t('error.priceFormat') }}
         </div>
-      <BkButton
-        :disabled="loading"
-        :isLoading="loading"
-      >
-        {{ $t('ticketForm.button') }}
-      </BkButton>
+        <div class="button-container">
+          <BkButton
+            class="submit-button"
+            :disabled="loading"
+            :isLoading="loading"
+          >
+            {{ $t('ticketForm.button') }}
+          </BkButton>
+          <form class="image-form">
+            <label for="image">
+              <BkButton
+                :disabled="loading"
+                :isLoading="loading"
+              >
+                <span class="material-icons">
+                  camera_enhance
+                </span>
+              </BkButton>
+            </label>
+            <input class="file" type="file" id="image" />
+          </form>
+        </div>
     </form>
     <div class="tickets-container">
       <h3>{{ $t('table.title') }}</h3>
@@ -161,6 +177,26 @@ export default {
       line-height: $base-line-height;
     }
   }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .submit-button {
+      width: 75%;
+    }
+    .image-form {
+      width: 20%;
+      button {
+        width: 100%;
+      }
+      .file {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+
   .form-container {
     display: flex;
     flex-direction: column;
