@@ -12,7 +12,7 @@ describe('Main view', () => {
 
   it('Main view should content the navbar', () => {
     cy.get('nav').should('be.visible');
-    cy.contains('nav', 'BRIKEV');
+    cy.contains('nav', 'TPV APP');
   });
 
   it(`The table should have a total of ${3} pdfs`, () => {
