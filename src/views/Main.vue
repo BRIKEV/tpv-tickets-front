@@ -36,7 +36,7 @@
         >
           {{ $t('error.priceFormat') }}
         </div>
-        <div class="button-container">
+        <div class="btns-container">
           <BkButton
             class="submit-button"
             :disabled="loading"
@@ -44,19 +44,11 @@
           >
             {{ $t('ticketForm.button') }}
           </BkButton>
-          <form class="image-form">
-            <label for="image">
-              <BkButton
-                :disabled="loading"
-                :isLoading="loading"
-              >
-                <span class="material-icons">
-                  camera_enhance
-                </span>
-              </BkButton>
-            </label>
-            <input class="file" type="file" id="image" />
-          </form>
+          <BkDropzone
+            :disabled="loading"
+            :isLoading="loading"
+            @onUpload="handleUpload"
+          />
         </div>
     </form>
     <div class="tickets-container">
@@ -144,11 +136,11 @@ export default {
       const { date, price } = this.ticket;
       if (!this.$v.$invalid) {
         this.setLoading(true);
-        this.updateTicket({
-          date,
-          price,
-        });
+        this.updateTicket({ date, price });
       }
+    },
+    handleUpload(data) {
+      this.ticket = data;
     },
     handleClickDeleteIcon(id) {
       this.ticketId = id;
@@ -177,26 +169,14 @@ export default {
       line-height: $base-line-height;
     }
   }
-  .button-container {
+  .btns-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .submit-button {
       width: 75%;
     }
-    .image-form {
-      width: 20%;
-      button {
-        width: 100%;
-      }
-      .file {
-        visibility: hidden;
-        width: 0;
-        height: 0;
-      }
-    }
   }
-
   .form-container {
     display: flex;
     flex-direction: column;
