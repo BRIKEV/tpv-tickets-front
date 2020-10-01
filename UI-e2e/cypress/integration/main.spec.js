@@ -80,7 +80,7 @@ describe('Main view', () => {
     cy.get('.error').should('be.visible');
   });
 
-  it.only('Should upload a photo correctly', () => {
+  it('Should upload a photo correctly', () => {
     const file = '../fixtures/file.json';
     const fileName = 'file.json';
     cy.route('POST', '/api/v1/ticket/ocr', 'fixture:uploadedPhoto').as('uploadedPhoto');
