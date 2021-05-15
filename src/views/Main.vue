@@ -135,9 +135,6 @@ export default {
     totalPrice(tickets) {
       return sumPrices(tickets);
     },
-    log(message) {
-      console.log(message);
-    },
     send() {
       const { date, price } = this.ticket;
       if (!this.$v.$invalid) {
