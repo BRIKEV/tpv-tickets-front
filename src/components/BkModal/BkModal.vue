@@ -7,15 +7,7 @@
             <slot name="body" />
           </div>
           <div class="modal-footer">
-            <slot name="footer">
-              <button
-                v-if="!!okText"
-                class="modal-default-button"
-                @click="$emit('close')"
-              >
-                {{ okText }}
-              </button>
-            </slot>
+            <slot name="footer" />
           </div>
         </div>
       </div>
@@ -73,10 +65,6 @@ $shadow: calculateRem(-1px) calculateRem(0px) calculateRem(7px) calculateRem(-4p
 
 .modal-body {
   margin: calculateRem(20px) 0;
-}
-
-.modal-default-button {
-  float: right;
 }
 
 .modal-enter {
