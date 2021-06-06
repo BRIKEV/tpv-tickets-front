@@ -9,10 +9,11 @@
           <div class="modal-footer">
             <slot name="footer">
               <button
+                v-if="!!okText"
                 class="modal-default-button"
                 @click="$emit('close')"
               >
-                OK
+                {{ okText }}
               </button>
             </slot>
           </div>
@@ -23,8 +24,13 @@
 </template>
 
 <script>
+import VueTypes from 'vue-types';
+
 export default {
   name: 'BkModal',
+  props: {
+    okText: VueTypes.string,
+  },
 };
 </script>
 
