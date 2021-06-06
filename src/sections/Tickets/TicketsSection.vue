@@ -163,9 +163,10 @@ export default {
 <style lang="scss" scoped>
   @import "@/theme/index.scss";
   .main {
+    width: 85%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 0 calculateRem(15px);
     h3 {
       text-align: center;
       font-size: $fs-h3;
@@ -176,6 +177,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
     .submit-button {
       width: 75%;
     }
@@ -183,8 +186,6 @@ export default {
   .form-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin: 0 auto;
     margin-top: calculateRem(20px);
     text-align: center;
   }
