@@ -3,8 +3,10 @@
     <transition
       name="fade" mode="out-in">
       <keep-alive>
-        <component class="content" v-bind:is="currentTab">
-        </component>
+        <component
+          class="content"
+          :is="currentTab"
+        />
       </keep-alive>
     </transition>
 
@@ -27,30 +29,25 @@
 
 <script>
 import VueTypes from 'vue-types';
-import Main from '@/views/Main.vue';
-import Pdf from '@/views/Pdf.vue';
+import Sections from '@/sections';
 
 export default {
   name: 'BkDynamicSelect',
 
-  components: {
-    Main,
-    Pdf,
-  },
+  components: Sections,
 
   props: {
     tabs: VueTypes.array,
-    tabsText: VueTypes.objectOf(VueTypes.shape({
-      Main: VueTypes.string,
-      Pdf: VueTypes.string,
+    tabsText: VueTypes.shape({
+      TicketsSection: VueTypes.string,
+      UploaderSection: VueTypes.string,
       Exit: VueTypes.string,
-    })),
+    }),
     currentTab: VueTypes.string,
   },
-
   methods: {
     selectedTab(value) {
-      return this.$emit('value-changed', value);
+      return this.$emit('click', value);
     },
   },
 };
