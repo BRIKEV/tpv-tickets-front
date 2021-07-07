@@ -116,7 +116,7 @@ export default {
         },
         price: {
           required,
-          mmaxLength: maxLength(5),
+          mmaxLength: maxLength(6),
           mustBeDecimal: priceFormat,
         },
       },
