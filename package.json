@@ -39,7 +39,8 @@
     "vuex": "^3.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.8.7",
+    "@babel/helper-compilation-targets": "^7.16.0",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-backgrounds": "^5.2.5",
     "@storybook/addon-knobs": "^5.2.5",
