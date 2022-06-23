@@ -28,7 +28,7 @@
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.21",
     "register-service-worker": "^1.7.1",
-    "snyk": "^1.595.0",
+    "snyk": "^1.680.0",
     "vue": "^2.6.10",
     "vue-analytics": "^5.22.1",
     "vue-i18n": "^8.17.5",
