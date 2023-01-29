@@ -3,7 +3,7 @@ import storage from '@/persistence';
 
 const { getToken } = storage('cookieStorage');
 
-const TPV_APP_API_URL = process.env.TPV_APP_API_URL || 'https://tpv-tickets-api.onrender.com/api/v1';
+const TPV_APP_API_URL = process.env.TPV_APP_API_URL || 'https://bngo-app.nw.r.appspot.com/api/v1';
 
 export const doLogin = ({ username, password }) => (
   axios.post(`${TPV_APP_API_URL}/login`, {
